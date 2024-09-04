@@ -14,17 +14,21 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String username;
-	private String password;
+	private String nome;
+	private String email;
+	private String senha;
+	private String papel;
 	
 	public Usuario() {
 	}
 
-	public Usuario(Long id, String username, String password) {
+	public Usuario(Long id, String nome, String email, String senha, String papel) {
 		super();
 		this.id = id;
-		this.username = username;
-		this.password = password;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.papel = papel;
 	}
 
 	public Long getId() {
@@ -35,20 +39,28 @@ public class Usuario implements Serializable{
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	public String getPapel() {
+		return papel;
+	}
+
+	public void setPapel(String papel) {
+		this.papel = papel;
 	}
 
 	@Override
@@ -67,9 +79,10 @@ public class Usuario implements Serializable{
 		Usuario other = (Usuario) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", papel=" + papel
+				+ "]";
 	}
 }
