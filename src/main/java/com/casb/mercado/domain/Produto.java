@@ -19,6 +19,7 @@ public class Produto implements Serializable{
 	private double preco;
 	private int estoque;
 	private boolean ativo;
+	private boolean vendido;
 	
 	public Produto() {
 	}
